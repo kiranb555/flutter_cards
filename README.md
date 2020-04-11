@@ -15,4 +15,4 @@ For help getting started with Flutter, view our
 [online documentation](https://flutter.dev/docs), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
 
-![Test Image 4](https://github.com/kiranb555/flutter_cards/blob/grid-cards/WhatsApp%20Image%202020-04-11%20at%205.46.08%20PM.jpeg)
+<img src="https://github.com/kiranb555/flutter_cards/blob/grid-cards/WhatsApp%20Image%202020-04-11%20at%205.46.08%20PM.jpeg" width="350" height="500">
