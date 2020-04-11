@@ -13,17 +13,67 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: Scaffold(
-        appBar: AppBar(
-          title: Center(
-            child: Text("mi_card"),
-          ),
-        ),
-        backgroundColor: Colors.cyan[100],
+        backgroundColor: Colors.blueGrey,
         body: SafeArea(
-          child: GridView.count(
-            crossAxisCount: 3,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              for(var i=0;i<15;i++)MyCards()
+              MyAvatar(),
+              Text(
+                "BOB",
+                style: TextStyle(
+                  fontFamily: 'Pacifico',
+                  fontSize: 40,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
+                ),
+              ),
+              Text(
+                "DEVELOPER",
+                style: TextStyle(
+                  fontFamily: 'SourceSansPro',
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                  letterSpacing: 1.2,
+                  color: Colors.teal[100],
+                ),
+              ),
+              SizedBox(
+                height: 20.0,
+                width: 150,
+                child: Divider(
+                  color: Colors.blueGrey[100],
+                ),
+              ),
+              Card(
+                margin: EdgeInsets.symmetric(vertical: 10, horizontal: 25),
+                color: Colors.white,
+                child: ListTile(
+                  leading: Icon(Icons.phone, color: Colors.blueGrey[400]),
+                  title: Text(
+                    "+91 999999999",
+                    style: TextStyle(
+                        fontSize: 20,
+                        letterSpacing: 2,
+                        color: Colors.blueGrey[400]),
+                  ),
+                ),
+              ),
+              Card(
+                margin: EdgeInsets.symmetric(vertical: 10, horizontal: 25),
+                color: Colors.white,
+                child: ListTile(
+                  leading: Icon(Icons.email, color: Colors.blueGrey[400]),
+                  title: Text(
+                    "bob@gmail.com",
+                    style: TextStyle(
+                      fontSize: 20,
+                      letterSpacing: 2,
+                      color: Colors.blueGrey[400],
+                    ),
+                  ),
+                ),
+              ),
             ],
           ),
         ),
@@ -32,26 +82,14 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class MyCards extends StatelessWidget {
+class MyAvatar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Container(
-        width: 100,
-        height: 100,
-//        color: Colors.white,
-        margin: EdgeInsets.all(10),
-        decoration: BoxDecoration(
-          gradient: LinearGradient(colors: const [
-            Colors.blue,
-            Colors.tealAccent,
-          ]),
-          boxShadow: const[
-            BoxShadow(blurRadius: 5)
-          ],
-          borderRadius: BorderRadius.circular(10)
-        ),
-        child: Center(child: Icon(Icons.adb, size: 25)),
-
+    return CircleAvatar(
+      radius: 50,
+      backgroundColor: Colors.white,
+      backgroundImage: NetworkImage(
+          "https://img.icons8.com/color/344/circled-user-male-skin-type-4.png"),
     );
   }
 }
